@@ -8,16 +8,6 @@ RSpec.describe User, type: :model do
       expect(subject).to be_valid
     end
 
-    it 'requires first_name' do
-      subject.first_name = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'requires last_name' do
-      subject.last_name = nil
-      expect(subject).to_not be_valid
-    end
-
     it 'requires email' do
       subject.email = nil
       expect(subject).to_not be_valid
