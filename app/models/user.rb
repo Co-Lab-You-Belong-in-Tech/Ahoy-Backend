@@ -4,6 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  def generate_jwt
+    JWT.encode({ id:, exp: 1.month.from_now.to_i }, Rails.application.secret_key_base)
+  end
+
+  def exposables
+    {
+      first_name:,
+      last_name:
+    }
+  end
 end
