@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'users/me'
+  patch 'users/me', to: 'users#update'
+
   devise_for :users,
     controllers: {
       registrations: :registrations,

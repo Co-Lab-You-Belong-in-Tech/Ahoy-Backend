@@ -10,8 +10,8 @@ class User < ApplicationRecord
 
   def exposables
     {
-      first_name:,
-      last_name:
+      name:,
+      bio:
     }
   end
 end
