@@ -1,10 +1,10 @@
 class Room < ApplicationRecord
-  has_many :users
+  has_many :room_users, dependent: :destroy
+  has_many :users, through: :room_users
 
   def exposables
     {
-      name:,
-      bio:
+      name:
     }
   end
 end
