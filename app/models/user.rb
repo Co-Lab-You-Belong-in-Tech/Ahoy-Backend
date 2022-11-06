@@ -8,6 +8,8 @@ class User < ApplicationRecord
     JWT.encode({ id:, exp: 1.month.from_now.to_i }, Rails.application.secret_key_base)
   end
 
+  has_one :room
+
   def exposables
     {
       name:,
