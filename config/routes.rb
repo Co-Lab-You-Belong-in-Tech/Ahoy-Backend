@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       registrations: :registrations,
       sessions: :sessions,
     }
+
+  patch 'match', to: 'matches#match_request'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
